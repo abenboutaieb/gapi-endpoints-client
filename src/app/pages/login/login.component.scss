@@ -1,0 +1,12 @@
+
+.signin-btn {
+  cursor: pointer;
+}
+
+.signin-btn:hover {
+  content: url("/assets/img/google-signin-btn/btn_google_signin_light_focus_web.png");
+}
+
+.signin-btn:active {
+  content: url("/assets/img/google-signin-btn/btn_google_signin_light_pressed_web.png");
+}
