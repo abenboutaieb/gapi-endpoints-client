@@ -9,6 +9,7 @@ import {environment} from '../environments/environment';
 import {Scope} from './models/scopes';
 import {EntryPointComponent} from './pages/entry-point/entry-point.component';
 import {LoginComponent} from './pages/login/login.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {LoginComponent} from './pages/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: AuthContext,
@@ -32,7 +34,8 @@ import {LoginComponent} from './pages/login/login.component';
         'https://www.googleapis.com/auth/drive.metadata',
         'https://www.googleapis.com/auth/drive.metadata.readonly',
         'https://www.googleapis.com/auth/drive.photos.readonly',
-        'https://www.googleapis.com/auth/drive.readonly']
+        'https://www.googleapis.com/auth/drive.readonly',
+        'https://www.googleapis.com/auth/devstorage.read_write']
     }
   }],
   bootstrap: [AppComponent]

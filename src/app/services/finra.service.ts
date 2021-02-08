@@ -25,6 +25,16 @@ export class FinraService {
     });
   }
 
+  delete(domain: string, retentionDocumentId: string, documentId: string): gapi.client.HttpRequestPromise<any> {
+    const url = this.toUrl(Apis.FINRA, 'delete', ApiVersion.V1);
+    const params = {domain, retentionDocumentId, documentId};
+    return gapi.client.request({
+      path: url,
+      method: 'DELETE',
+      params
+    });
+  }
+
 
   protected toUrl(root: string, method: string, version: string): string {
     return this.baseUrl + this.apiUrl + root + (method ? '/' + version + '/' + method : '/' + version);

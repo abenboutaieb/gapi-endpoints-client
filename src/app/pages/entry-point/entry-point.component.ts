@@ -16,17 +16,34 @@ export class EntryPointComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.call();
+   // this.call();
   }
 
   call(): void {
-    const domain = 'altirnao.com';
+    const domain = 'atlanticlabs.co';
     const bucketName = 'finra-test';
-    const documentId = 'SNs7ZUKxkzcY9pwAki';
+    const documentId = 'SOREEFF8g613gY0pF3';
     const propertyName = 'property';
     this.trainingService.copy(domain, bucketName, documentId, propertyName).then((resp) => {
       this.zone.run(() => {
         console.log(resp);
+        this.loading = false;
+      });
+    }).catch((error) => {
+      this.zone.run(() => {
+        this.loading = false;
+      });
+    });
+  }
+
+  delete(): void {
+    const domain = 'atlanticlabs.co';
+    const retentionDocumentId = 'SO9IIRp1Ts1l49dd1z';
+    const documentId = 'property';
+    this.trainingService.delete(domain, retentionDocumentId, documentId).then((resp) => {
+      this.zone.run(() => {
+        console.log(resp);
+        this.loading = false;
       });
     }).catch((error) => {
       this.zone.run(() => {
