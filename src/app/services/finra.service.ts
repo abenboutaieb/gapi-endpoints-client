@@ -15,9 +15,9 @@ export class FinraService {
   constructor() {
   }
 
-  copy(domain: string, bucketName: string, documentId: string, propertyName: string): gapi.client.HttpRequestPromise<any> {
+  copy(domain: string, documentId: string, propertyName: string): gapi.client.HttpRequestPromise<any> {
     const url = this.toUrl(Apis.FINRA, 'copy', ApiVersion.V1);
-    const params = {domain, bucketName, propertyName, documentId};
+    const params = {domain, propertyName, documentId};
     return gapi.client.request({
       path: url,
       method: 'GET',

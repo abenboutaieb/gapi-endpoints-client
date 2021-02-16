@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  baseUrl: 'https://aodocs-finra-demo.appspot.com/',
+  baseUrl: 'http://localhost:8080/',
   apiUrl: '_ah/api/',
   aodocsUrl: 'https://ao-docs.appspot.com/',
   clientId: '833441195050-jmtu6ucdlp72mgfjafqa0c35k5gdjptt',

@@ -21,10 +21,9 @@ export class EntryPointComponent implements OnInit {
 
   call(): void {
     const domain = 'atlanticlabs.co';
-    const bucketName = 'finra-test';
-    const documentId = 'SOREEFF8g613gY0pF3';
+    const documentId = 'SPBTVwT0UjAHsnQhGy';
     const propertyName = 'property';
-    this.trainingService.copy(domain, bucketName, documentId, propertyName).then((resp) => {
+    this.trainingService.copy(domain, documentId, propertyName).then((resp) => {
       this.zone.run(() => {
         console.log(resp);
         this.loading = false;
